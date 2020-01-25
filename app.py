@@ -30,7 +30,12 @@ def mision():
 def historia():
 	return render_template("historia.html")
 
+@app.route('/registro')
+def registro():
+    return render_template("registro.html")
 
+
+    
 if __name__ == '__main__':
     db.init_app(app)
     with app.app_context():
