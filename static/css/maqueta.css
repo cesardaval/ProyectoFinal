@@ -1,0 +1,214 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/*background: #E9ECF4;*/
+	background-image:url("../images/wallpappers/background.jpg");
+/*para que la imagen no se repita y se ajuste a la pantalla
+La propiedad «background-size: cover» nos permite aumentar
+el tamaño de la imagen de fondo, en lugar de que nos
+muestre la imagen varias veces.
+http://dissenyaweb.com/blog/diseno_web/como-hacer-que-la-imagen-de-fondo-se-adapte-al-tamano-de-la-pantalla-con-css3/
+*/
+background-repeat:no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+/*.contenedor{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(4,auto);
+	grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						/*"carrusel carrusel carrusel"
+						"contenido contenido contenido"
+						"contenido contenido contenido"
+						"footer footer footer";
+}*/
+.acontenedor,
+.bcontenedor,
+.ccontenedor{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(4,auto);
+}
+/*********Contenedor pagina inicio*/
+.acontenedor{
+	grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"carrusel carrusel carrusel carrusel"
+						"aseccion aseccion aseccion aseccion"
+						"bseccion bseccion cseccion cseccion"
+						"footer footer footer footer";
+}
+
+/*********CONTENEDOR PAGINA HISTORIA*/
+.bcontenedor{
+	grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"carrusel carrusel carrusel carrusel"
+						"aseccion cseccion cseccion cseccion"
+						"bseccion dseccion dseccion dseccion"
+						"footer footer footer footer";
+}
+
+/*********CONTENEDOR PAGINA MISION*/
+.ccontenedor{
+	grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"carrusel carrusel carrusel carrusel"
+						"aseccion aseccion aseccion aseccion"
+						"cseccion cseccion bseccion bseccion"
+						"footer footer footer footer";
+}
+/*.contenedor*/
+.header{
+	background: #12203E;
+	color: #fff;
+	padding:10px;
+	width:100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header .elogo{
+	width:10%;
+	/*background:red;*/
+	display: inline-block
+}
+.logo{
+	width:40%;
+}
+
+.header .titulo{
+	width:60%;
+	/*background:blue;*/
+	display: inline-block
+	font-size:40px;
+	text-align: left;
+}
+
+.acontenedor .carrusel,
+.bcontenedor .carrusel,
+.ccontenedor .carrusel{
+	grid-area:carrusel;
+}
+
+.acontenedor .footer,
+.bcontenedor .footer,
+.ccontenedor .footer{
+	background:#12203E;
+	color: #fff;
+	grid-area:footer;
+	padding:20px;
+	border-radius: 4px;
+}
+/*******************/
+/****COTENIDOS DE PAGINAS****/
+
+/***Inicio****/
+.acontenedor .aseccion,
+.bcontenedor .aseccion,
+.ccontenedor .aseccion{
+/*https://desarrolloweb.com/articulos/sombras-css3-box-shadow.html*/
+	box-shadow: 1px 1px 10px black;
+	background: #EEE;
+	grid-area:aseccion;
+	padding:20px;
+	border-radius: 4px;
+}
+
+/***Historia****/
+.acontenedor .bseccion,
+.bcontenedor .bseccion,
+.ccontenedor .bseccion{
+/*https://desarrolloweb.com/articulos/sombras-css3-box-shadow.html*/
+	box-shadow: 1px 1px 10px black;
+	background: #EEE;
+	grid-area:bseccion;
+	padding:20px;
+	border-radius: 4px;
+}
+.acontenedor .cseccion,
+.bcontenedor .cseccion,
+.ccontenedor .cseccion{
+/*https://desarrolloweb.com/articulos/sombras-css3-box-shadow.html*/
+	box-shadow: 1px 1px 10px black;
+	background: #EEE;
+	grid-area:cseccion;
+	padding:20px;
+	border-radius: 4px;
+}
+.bcontenedor .dseccion,
+.ccontenedor .dseccion{
+/*https://desarrolloweb.com/articulos/sombras-css3-box-shadow.html*/
+	box-shadow: 1px 1px 10px black;
+	background: #EEE;
+	grid-area:dseccion;
+	padding:20px;
+	border-radius: 4px;
+}
+/***Mision****/
+
+/***********************************************
+
+----------------REPONSIVE-----------------
+
+************************************************/
+
+@media screen and (max-width: 768px){
+	.acontenedor {
+		grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"carrusel carrusel carrusel carrusel"
+						"aseccion aseccion aseccion aseccion"
+						"bseccion bseccion bseccion bseccion"
+						"footer footer footer footer";
+	}
+	.bcontenedor{
+	grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"carrusel carrusel carrusel carrusel"
+						"aseccion aseccion aseccion aseccion"
+						"bseccion bseccion bseccion bseccion"
+						"cseccion cseccion cseccion cseccion"
+						"dseccion dseccion dseccion dseccion"
+						"footer footer footer footer";
+	}
+	.ccontenedor{
+	grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"carrusel carrusel carrusel carrusel"
+						"aseccion aseccion aseccion aseccion"
+						"bseccion bseccion bseccion bseccion"
+						"cseccion cseccion cseccion cseccion"
+						"footer footer footer footer";
+	}
+	.header .titulo{
+		font-size: 12px;
+	}
+}
+
+
+.center{
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

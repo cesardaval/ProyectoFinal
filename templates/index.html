@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/maqueta.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/carrusel.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/menu.css')}}">
+		<title>Inicio - E.T.C.R. Hermágoras Chavéz</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="elogo">
+				<img src="{{url_for('static', filename='images/escudoh.png')}}" class="logo">
+			</div>
+			<div class="titulo">
+				Escuela Técnica Comercial Robinsoniana "Hermágoras Chávez"
+			</div>
+		</header>
+		<!--.
+			.
+		.-->
+		<div class="contemenu">
+			<div class="menu_bar">
+				<a href="#" class="btmenu">Menu</a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index">Inicio</a></li>
+					<li><a href="historia">Historia</a></li>
+					<li><a href="mision">Misión</a></li>
+					<li><a href="objetivos">Objetivos</a></li>
+					<li><a href="contacto">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--.
+					.
+		.-->
+		<div class="acontenedor">
+			
+			<div class="carrusel">
+				<!--img src="images/imagen_portada_nueva4.jpg"-->
+				<ul>
+					<li><img src="{{url_for('static', filename='images/portada/porta4.png')}}" alt=""></li>
+					<li><img src="{{url_for('static', filename='images/portada/porta3.png')}}" alt=""></li>
+					<li><img src="{{url_for('static', filename='images/portada/porta2.png')}}" alt=""></li>
+					<li><img src="{{url_for('static', filename='images/portada/porta1.png')}}" alt=""></li>
+				</ul>
+			</div>
+			<div class="aseccion">
+				<p>"Nuestra <strong>E.T.C.R. HERMÁGORAS CHÁVEZ</strong>, viene desarrollando un arduo <strong>trabajo pedagógico</strong> para afianzar los valores del <strong>nuevo ciudadano</strong> que la república necesita: fomentando valores, formando para la vida y el trabajo liberador y <strong>con espíritu participativo, protagónico y democrático.</strong>"</p><br>
+				<p><em>“Aprender Haciendo y Enseñar Produciendo”</em>, tiene como propósito central desarrollar un sistema de acción pedagógica que permita incorporar los diversos sectores de la sociedad: Urbano y Rural, en la función educativa, a objeto de impulsar: la seguridad alimentaria, fortalecer el autofinanciamiento, la autogestión y la participación comunitaria, a través de la educación y el trabajo como procesos fundamentales para alcanzar los fines de la nación.</p>
+			</div>
+			<div class="bseccion">
+				<img src="{{url_for('static', filename='images/newvector/logro-07.svg')}}" class="center" style="width: 100px">
+				<br><h3>Niveles y Menciones</h3><hr><br>
+				<p>La Institución cuenta con los niveles de 7mo, 8vo y 9no año y el Ciclo Diversificado de 4to, 5to y 6to año, los estudiantes pueden elegir entre las siguientes menciones:</p><br>
+				<li>Técnico Medio en Mercadeo.</li>
+				<li>Técnico Medio en Secretariado.</li>
+				<li>Técnico Medio en Informatica.</li>
+				<li>Técnico Medio en Contabilidad.</li>
+				<li>Técnico Medio en Asistencia Gerencial</li>
+				<li>Técnico Medio en Aduana</li>
+			</div>
+			<div class="cseccion">
+				<img src="{{url_for('static', filename='images/newvector/ubicacion-08.svg')}}" class="center" style="width: 100px">
+				<br><h3>Contacto</h3><hr><br>
+				<p><strong>Telefono:</strong><br>
+					0264-808-0698<br><br>
+					<strong>e-mail:</strong><br>
+					ETCR.HermagorasChavez@hotmail.com<br><br>
+					<strong>Dirección:</strong><br>
+				Urb. Las 40, Av. 14, sector Las Delicias, Cabimas - Edo. Zulia (Venezuela)</p>
+			</div>
+			<footer class="footer">
+				<p>Copyright &copy; E.T.C.R. HERMÁGORAS CHAVÉZ - 2020 <br></p>
+			</footer>
+		</div>
+		<script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/funcion.js')}}"></script>
+	</body>
+</html>

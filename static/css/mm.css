@@ -1,0 +1,88 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	background:#fffffa;
+}
+header{
+	width:100%;
+}
+header nav{
+	width:90%;
+	margin:20px auto;
+	max-width:1000px;
+	background:#024959;
+}
+/*ocultar el menu_bar*/
+.menu_bar{
+	display:none;
+}
+
+header nav ul{
+	/*esta propia evita que se sobreponga el texto*/
+	overflow:hidden;
+	list-style:none;
+}
+
+header nav ul li{
+	float:left;
+}
+
+header nav ul li a{
+	color:#fff;
+	padding:20px;
+	/*para usar el paddin se debe poner esta propiedad
+	.. asi con display el paddin se modifica a los lados
+	tambien y no solo arriba y abajo*/
+	display:block;
+	text-decoration:none;
+}
+section{
+	padding:20%
+}
+
+header nav ul li a:hover{
+	background:#037E8C;
+}
+@media screen and (max-width:800px){
+	/*aqui programa el menu para que aparezca
+	a la derecha y abarque el 70%*/
+	header nav{
+		width:70%;
+		height:100%;
+		margin:0;
+		position:fixed;
+		/**esto permite que el menu no salga
+		se mantenga**/
+		left:-100%;
+	}
+	/*que el menu salga alineado vertical
+	se quita el float para que se coloque abajo del otro
+	lo ultimo es el color de la linea*/
+	header nav ul li{
+		display:block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+	/*boton*/
+	.menu_bar{
+		display:block;
+		width:100%;
+		background:#ccc;
+	}
+	.menu_bar .btmenu{
+		/*para que abarque el 100% y se puedan
+		modificar los margenes internos*/
+		display:block;
+		padding:20px;
+		background:#024959;
+		color:#fff;
+		text-decoration: none;
+		font-weight:bold;
+		font-size:25px;
+		-border-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+}

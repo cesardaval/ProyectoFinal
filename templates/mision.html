@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/maqueta.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/carrusel.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/menu.css')}}">
+		<title>Inicio - E.T.C.R. Hermágoras Chavéz</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="elogo">
+				<img src="{{url_for('static', filename='images/escudoh.png')}}" class="logo">
+			</div>
+			<div class="titulo">
+				Escuela Técnica Comercial Robinsoniana "Hermágoras Chávez"
+			</div>
+		</header>
+		<!--.
+			.
+		.-->
+		<div class="contemenu">
+			<div class="menu_bar">
+				<a href="#" class="btmenu">Menu</a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index">Inicio</a></li>
+					<li><a href="historia">Historia</a></li>
+					<li><a href="mision">Misión</a></li>
+					<li><a href="objetivos">Objetivos</a></li>
+					<li><a href="contacto">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--.
+					.
+		.-->
+		<div class="ccontenedor">
+			
+			<div class="carrusel">
+				<!--img src="images/imagen_portada_nueva4.jpg"-->
+				<ul>
+					<li><img src="{{url_for('static', filename='images/portada/porta4.png')}}" alt=""></li>
+					<li><img src="{{url_for('static', filename='images/portada/porta3.png')}}" alt=""></li>
+					<li><img src="{{url_for('static', filename='images/portada/porta2.png')}}" alt=""></li>
+					<li><img src="{{url_for('static', filename='images/portada/porta1.png')}}" alt=""></li>
+				</ul>
+			</div>
+			<div class="aseccion">
+				<img src="{{url_for('static', filename='images/newvector/escuela-01.svg')}}" class="center" style="width: 100px">
+				<h3>Misión</h3>
+				<br>
+				<p>La Escuela Técnica Robinsoniana está dirigida a jóvenes y adolescentes cuya vocación, aptitudes, intereses y necesidades están orientadas a la formación integral, para el trabajo productivo y liberador. Articulando el proceso educativo con el desarrollo tecnológico y el sistema de producción de bienes y servicios, permitiéndole al joven egresado, incorporarse de inmediato y a temprana edad al campo ocupacional, así como también la prosecución de estudios a nivel superior.</p>
+				<br>
+				<h3>Visión</h3>
+				<br>
+				<p>Nuestra visión nos lleva a proyectarnos como una institución que apunta a la sociedad un modelo de educación integral en la formación de ciudadanos y ciudadanas conscientes de su futura responsabilidad en el desarrollo y proyecto del país en consonancia con nuestra constitución de la república bolivariana,  la cual otorga a la educación la finalidad de desarrollar el potencial creativo de cada ser humano y el pleno ejercicio de su personalidad en una sociedad democrática basada en su valoración ética del trabajo y en la participación activa, consciente y solidaria en los procesos de transformación social, consustanciadas con los valores de la identidad nacional.</p>
+			</div>
+			<div class="cseccion">
+				<img src="{{url_for('static', filename='images/newvector/bien-04.svg')}}" class="center" style="width: 100px">
+				<h3>Objetivos</h3><br>
+				<li>Formar individuos integrales con alto sentido social capaces de hacerle frente a la  realidad y con competencias y habilidades para ingresar a la educación superior.</li>
+				<li>Proporcionar a los  estudiantes los conocimientos y herramientas necesarias para el desarrollo moral y psicológico.</li>
+				<li>Formar ciudadanos(as) capaces de contribuir con el desarrollo endógeno local, regional y nacional a través de la participación protagónica en la construcción del proyecto país.</li>
+				<li>Establecer en cada individuo en formación los valores fundamentales que les permitan integrarse a los procesos de cambio que se dan dentro de la sociedad.</li>
+			</div>
+			<div class="bseccion">
+				<img src="{{url_for('static', filename='images/newvector/piezas-03.svg')}}" class="center" style="width: 100px">
+				<h3><br>Estrategias</h3><br>
+				<li>Velar por el cumplimiento del proceso de enseñanza-aprendizaje.</li>
+				<li>Fomentar en los estudiantes a través de las diferentes asignaturas valores de justicia, igualdad, responsabilidad, democracia, amor, cooperación, identidad y solidaridad.</li>
+				<li>Supervisar el cumplimiento de las planificaciones de lapso.</li>
+				<li>Evaluación, monitoreo y control de las evaluaciones educativas.</li>
+			</div>
+			<footer class="footer">
+				<p>Copyright &copy; E.T.C.R. HERMÁGORAS CHAVÉZ - 2020 <br></p>
+			</footer>
+		</div>
+		<script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/funcion.js')}}"></script>
+	</body>
+</html>
