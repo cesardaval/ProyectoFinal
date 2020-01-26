@@ -4,7 +4,7 @@ from flask import redirect, url_for
 from flask import flash
 from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
-from tables import Tabla
+from tables import Tabla, items
 import forms
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
@@ -32,9 +32,15 @@ def historia():
 
 @app.route('/registro')
 def registro():
-    return render_template("registro.html")
+    form = forms.Formulario()
+    return render_template("registro.html",forms = form)
 
+@app.route('/reporte')
+def reporte():
 
+    item = [items("Maria", "correo@yahoo.com", "loca", "1"),]
+    tabla = Tabla(item)
+    return render_template("reporte.html", tabla = tabla)
     
 if __name__ == '__main__':
     db.init_app(app)

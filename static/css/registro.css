@@ -38,7 +38,7 @@ margin:0;
 padding:0;
 background-size:cover;
 font-family:sans-serif;
-background-image:url("../images/wallpappers/background.jpg");
+background-color: #4180E6FF;
 /*background-repeat:no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -58,7 +58,11 @@ width:350px;
 height:400px;
 padding:80px 40px;
 box-sizing:border-box;
-background:#fff;
+background:rgb(0,0,0,.5);
+border-radius:20px;
+/***/
+box-shadow: 1px 1px 10px black;
+color:#fff;
 }
 .user
 {
@@ -75,16 +79,16 @@ h2
 {
 margin:0;
 padding: 0 0 20px;
-color: #000;
+color: #fff;
 text-align:center;
 }
-.loginBox p
+/*.loginBox td label;
 {
 margin:0;
 padding:0;
 font-weight:bold;
 color:#fff;
-}
+}*/
 .loginBox input
 {
 width:100%;
@@ -99,7 +103,7 @@ margin-bottom:20px;
 	outline:none;
 	height:40px;
 	font-size:16px;
-	color:#000;
+	color:#fff;
 }
 ::placeholder
 {
@@ -111,12 +115,12 @@ margin-bottom:20px;
 	height:40px;
 	color:#000;
 	font-size:16px;
-	background:#0FBC15;
+	background:#fff;
 	cursor:pointer;
 	border-radius:20px;
 }
 .loginBox input[type="submit"]:hover{
-	background:#efed40;
+	background:#C1C1C1;
 	color:#262626;
 }
 /*.loginBox a{
@@ -128,3 +132,9 @@ margin-bottom:20px;
 /*https://www.youtube.com/watch?v=ylFLVBbB9AM
 min 8.03*/
 
+
+@media screen and (max-width: 768px){
+	.loginBox{
+		margin-top:10%;
+	}
+}

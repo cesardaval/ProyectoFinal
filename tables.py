@@ -6,7 +6,7 @@ class Tabla(Table):
     username = Col("usuario")
     #password = Col("password")
     email = Col("email")
-    id_usuario = ("representante id")
+    id_usario = Col("representante id")
     id = Col("id")
     """
     para referencias futuras en el link col se establece un enlace 
@@ -18,9 +18,19 @@ class Tabla(Table):
     usuario.nombre para el nombre del usuario. el diccionario que le sigue es
     para darle los estilos mediante clases css
     """
-    editar = LinkCol("editar", "edita",
-                     url_kwargs=dict(id='id'),
-                     anchor_attrs={'class': 'btn btn-success'})
+   # editar = LinkCol("editar", "edita",
+    #                 url_kwargs=dict(id='id'),
+     #                anchor_attrs={'class': 'btn btn-success'})
     #eliminar = LinkCol("eliminar", "borrar",
    #                  url_kwargs=dict(id='id'),
     #                 anchor_attrs={'class': 'btn btn-danger'})
+
+class items(object):
+    """docstring for items"""
+    def __init__(self, username,email, id_usario,id):
+        self.username = username
+        self.email = email
+        self.id_usario =  id_usario
+        self.id = id
+        
+        

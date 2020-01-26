@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #E9ECF4;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.p1{
+	text-align: justify;
+}
+
+.p2{
+	font-size:12px;
+}
+
+h1{
+	font-size:20px;
+	text-align: center;
+}
+/*********************/
+
+.contenedor {
+	background:#fff;
+	width: 90%;
+	max-width: 1000px;
+	/*margin top-bot 20 px, lados=auto*/
+	margin: 20px auto;
+	display: grid;
+	/*margen de 20px entre cada elemento
+	pero no en la parte externa*/
+	grid-gap:20px;
+	padding:20px;
+	/*crear tres columnas: widget1, widget2
+	y la barra dentro del contenedor..
+	seran 3 columnas del mismo tamaño (1fr)*/
+	grid-template-columns: repeat(4,1fr);
+	/* 4 filas con tamaño automatico*/
+	grid-template-rows: repeat(3,auto);
+
+	/*CAMBIOS*/
+	/*especificar cuantas filas y columnas*/
+	grid-template-areas: "alogo header header blogo"
+						"contenido contenido contenido contenido"
+						"footer footer footer footer";
+}
+
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .footer{
+	/*background: #fff;*/
+	background:#fff;
+	padding:20px;
+	border-radius: 4px;
+}
+/*************************/
+.contenedor .header{
+	grid-area:header;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/***************************/
+.contenedor .contenido{
+	grid-area:contenido;
+	padding:50px;
+}
+/*************************/
+.contenedor .footer{
+	grid-area:footer;
+}
+
+/******************/
+.contenedor .alogo{
+	grid-area:alogo;
+	background:#fff;
+}
+.contenedor .alogo img{
+	width: 50%;
+}
+/*********************/
+.contenedor .blogo{
+	grid-area:blogo;
+	background:#fff;
+}
+
+.contenedor .blogo img{
+	width: 80%;
+}
+
+/*.contenedor .blogo img,
+.contenedor .alogo img{
+	width: 50%;
+}*/
+
+/*****TABLA********/
+table{
+		/*border externo*/
+	/*border:3px solid #49E31BFF;
+	/*quitar el espaciado entre celdas pro defecto*/
+	border-collapse:collapse;
+	/*controlar el ancho*/
+	width: 100%;
+
+
+}
+table td{
+	/*border:1px solid #000;
+	/*borde de celdas*/
+	border-bottom: 2px solid #001A5E;
+	text-align: center;
+		padding:5px;
+}
+
+th {
+  background-color: #001A5E;
+  color: white;
+  	padding:10px;
+}
+/***FIN-TABLA*****/
