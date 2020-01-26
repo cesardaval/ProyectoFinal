@@ -20,9 +20,13 @@
 		</header>
 		<div class="loginBox">
 			<h2>Login</h2>
-			<form>
+			<form method="POST">
 				{{imprime_formulario(forms.nombre, placeholder='Nombre')}}
 				{{imprime_formulario(forms.cedula, placeholder=' ejemplo 24370551')}}
+				{{imprime_formulario(forms.username, placeholder=' ejemplo petronilo11')}}
+				{{imprime_formulario(forms.email, placeholder=' ejemplo 24370551')}}
+				{{imprime_formulario(forms.password, placeholder=' ejemplo 24370551')}}
+				<input type="submit" name="" value="Hecho">
 				<!--input Type="text" name="" placeholder="usuario / correo electrónico">
 				<input Type="text" name="" placeholder="usuario / correo electrónico">
 				<input Type="text" name="" placeholder="usuario / correo electrónico">
