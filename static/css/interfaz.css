@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/*background: #E9ECF4;*/
+	background-image:url("../images/wallpappers/background.jpg");
+/*para que la imagen no se repita y se ajuste a la pantalla
+La propiedad «background-size: cover» nos permite aumentar
+el tamaño de la imagen de fondo, en lugar de que nos
+muestre la imagen varias veces.
+http://dissenyaweb.com/blog/diseno_web/como-hacer-que-la-imagen-de-fondo-se-adapte-al-tamano-de-la-pantalla-con-css3/
+*/
+background-repeat:no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(2,auto);
+	grid-template-areas: "contenido contenido contenido"
+						"footer footer footer";
+}
+
+.contenedor .contenido{
+	grid-area:contenido;
+}
+
+.contenedor .footer{
+	grid-area:footer;
+}

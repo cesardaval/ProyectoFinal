@@ -41,6 +41,12 @@ def reporte():
     item = [items("Maria", "correo@yahoo.com", "loca", "1"),]
     tabla = Tabla(item)
     return render_template("reporte.html", tabla = tabla)
+
+
+@app.route('/preinscripcion/<string:usuario>')
+def preinscripcion(usuario="cesar"):
+    return render_template("perfil.html")
+
     
 if __name__ == '__main__':
     db.init_app(app)
