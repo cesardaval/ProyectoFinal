@@ -78,12 +78,7 @@ background-size: cover;
 						"cseccion cseccion bseccion bseccion"
 						"footer footer footer footer";
 }
-.dcontenedor{
-	grid-template-areas: "eseccion eseccion eseccion eseccion"
-						"eseccion eseccion eseccion eseccion"
-						"eseccion eseccion eseccion eseccion"
-						"footer footer footer footer";
-}
+
 .header{
 	background: #12203E;
 	color: #fff;
@@ -119,8 +114,7 @@ background-size: cover;
 
 .acontenedor .footer,
 .bcontenedor .footer,
-.ccontenedor .footer,
-.dcontenedor .footer{
+.ccontenedor .footer{
 	background:#12203E;
 	color: #fff;
 	grid-area:footer;
@@ -173,13 +167,6 @@ background-size: cover;
 	border-radius: 4px;
 }
 
-.dcontenedor .eseccion{
-	box-shadow: 1px 1px 10px black;
-	background: #EEE;
-	grid-area:eseccion;
-	padding:20px;
-	border-radius: 4px;
-}
 /***Mision****/
 
 /***********************************************
