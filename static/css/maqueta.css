@@ -228,3 +228,7 @@ background-size: cover;
     margin-right: auto;
     display: block;
 }
+
+p, li{
+	text-align:justify;
+}
