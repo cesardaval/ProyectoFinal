@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #4180E6FF;
+	font-family: 'Roboto', sans-serif;
+}
+
+.dcontenedor{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(4,auto);
+	grid-template-areas: "eseccion eseccion eseccion eseccion"
+						"eseccion eseccion eseccion eseccion"
+						"eseccion eseccion eseccion eseccion"
+						"footer footer footer footer";
+}
+.header{
+	background: #12203E;
+	color: #fff;
+	padding:10px;
+	width:100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header .elogo{
+	width:10%;
+	/*background:red;*/
+	display: inline-block
+}
+.logo{
+	width:40%;
+}
+
+.header .titulo{
+	width:60%;
+	/*background:blue;*/
+	display: inline-block
+	font-size:40px;
+	text-align: left;
+}
+
+.dcontenedor .footer{
+	background:#12203E;
+	color: #fff;
+	grid-area:footer;
+	padding:20px;
+	border-radius: 4px;
+}
+
+.dcontenedor .eseccion{
+	box-shadow: 1px 1px 10px black;
+	background: #EEE;
+	grid-area:eseccion;
+	padding:20px;
+	border-radius: 4px;
+}
+/***Mision****/
+
+/***********************************************
+
+----------------REPONSIVE-----------------
+
+************************************************/
+
+@media screen and (max-width: 768px){
+	.acontenedor {
+		grid-template-areas: /*"header header header"*/
+						/*"contemenu contemenu contemenu"*/
+						"eseccion eseccion eseccion eseccion"
+						"eseccion eseccion eseccion eseccion"
+						"eseccion eseccion eseccion eseccion"
+						"footer footer footer footer";
+	}
+	
+	.header .titulo{
+		font-size: 12px;
+	}
+}
+
+
+.center{
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

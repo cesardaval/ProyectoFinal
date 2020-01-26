@@ -40,7 +40,7 @@ background-size: cover;
 .acontenedor,
 .bcontenedor,
 .ccontenedor,
-.dcontenedor{
+.contenedor{
 	width: 90%;
 	max-width: 1000px;
 	margin: 20px auto;
