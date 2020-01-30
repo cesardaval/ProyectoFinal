@@ -4,7 +4,7 @@ from flask import redirect, url_for
 from flask import flash
 from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
-from tables import Tabla, Alumnos
+from tables import Alumnos
 import forms
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
@@ -62,16 +62,16 @@ def registro():
 @app.route('/reporte')
 def reporte():
 
-    repre = User.query.filter_by(id = session['user_id']).first()
+    repre = User.query.filter_by(id=session['user_id']).first()
     alunmos = db.session.query(Representante,
                                Preinscripcion
                                ).join(Preinscripcion).filter_by(id_Representante=session['user_id']).add_columns(
-                               Preinscripcion.nombre,Preinscripcion.apellido,
-                               Preinscripcion.cedula,Preinscripcion.escuela,
-                               Preinscripcion.edad)
+        Preinscripcion.nombre, Preinscripcion.apellido,
+        Preinscripcion.cedula, Preinscripcion.escuela,
+        Preinscripcion.edad)
     tabla = Alumnos(alunmos)
-    print(repre,type(repre))
-    return render_template("reporte.html", tabla=tabla, repre = repre)
+    print(repre, type(repre))
+    return render_template("reporte.html", tabla=tabla, repre=repre)
 
 
 @app.route('/loggin', methods=['GET', 'POST'])
@@ -121,6 +121,13 @@ def Representantes():
     """
     esta ruta es para guardar los datos la repesentantes de manera automatica
     si todo esta bien no tienen que percatarse de lo que esta pasando :V
+
+    nota para mi yo del futuro, te acabas de encontrar de casualidad una situacion
+    no esperada, programamos la tabla de representantes para que sea igual 
+    id tabla y el id_relacion y sin querer hice un registro que rompiera con esta 
+    logica y a la hora de lanzar el reporte da como resultado un intercambio de datos
+    porfavor recuerda sulucionarlo en el futuro gracias <3 recuerda que fue 1 2
+    y 2 1
     """
     # objeto consulta que filtra si el usuario esta en la tabla Representantes
     representante = Representante.query.filter_by(
