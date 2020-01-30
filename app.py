@@ -4,11 +4,10 @@ from flask import redirect, url_for
 from flask import flash
 from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
-from tables import Tabla, items
+from tables import Tabla, Alumnos
 import forms
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
-
 
 
 @app.before_request
@@ -63,8 +62,13 @@ def registro():
 @app.route('/reporte')
 def reporte():
 
-    item = [items("Maria", "correo@yahoo.com", "loca", "1"), ]
-    tabla = Tabla(item)
+    alunmos = db.session.query(Representante,
+                               Preinscripcion
+                               ).join(Preinscripcion).filter_by(id_Representante=session['user_id']).add_columns(
+                               Preinscripcion.nombre,Preinscripcion.apellido,
+                               Preinscripcion.cedula,Preinscripcion.escuela,
+                               Preinscripcion.edad)
+    tabla = Alumnos(alunmos)
     return render_template("reporte.html", tabla=tabla)
 
 
@@ -88,7 +92,7 @@ def login():
     return render_template("loggin.html", forms=hola)
 
 
-@app.route('/preinscripcion')
+@app.route('/preinscripcion', methods=['GET', 'POST'])
 def preinscripcion():
     registro = forms.RegistroAlumno(request.form)
     id_representante = Representante.query.get(session['user_id'])

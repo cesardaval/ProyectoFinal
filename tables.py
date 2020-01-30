@@ -25,6 +25,14 @@ class Tabla(Table):
    #                  url_kwargs=dict(id='id'),
     #                 anchor_attrs={'class': 'btn btn-danger'})
 
+class Alumnos(Table):
+    """docstring for Alumnos"""
+    nombre = Col("Nombre")
+    apellido = Col("Apellido")
+    cedula = Col("Cedula")
+    escuela = Col("Escuela")
+    edad = Col("Edad")
+
 class items(object):
     """docstring for items"""
     def __init__(self, username,email, id_usario,id):
