@@ -28,26 +28,32 @@ class loggin(Form):
     """docstring for loggin"""
     username = TextField('Usuario',
                          [validators.length(min=8, max=25),
-                          validators.required(message='el usuario es requerido')
-                        ])
+                          validators.required(
+                              message='el usuario es requerido')
+                          ])
     password = PasswordField('Password', [validators.length(min=8, max=95),
-                            validators.required(message="el usuario es requerido")])
+                                          validators.required(message="el usuario es requerido")])
+
 
 class RegistroAlumno(Form):
     """docstring for RegistroAlumno"""
-  
-    nombre =  TextField('Nombre', [validators.length(
+
+    nombre = TextField('Nombre', [validators.length(
         min=3, max=20, message="ingrese un nombre valido"),
-    validators.required(message="el usuario es requerido")])
+        validators.required(message="el usuario es requerido")])
 
     apellido = TextField('Apellido', [validators.length(
         min=3, max=20, message="ingrese un nombre valido"),
-    validators.required(message="el usuario es requerido")])
+        validators.required(message="el usuario es requerido")])
 
     escuela = TextField('Escuela', [validators.length(
         min=8, max=50, message="ingrese un nombre valido"),
-    validators.required(message="el usuario es requerido")])
+        validators.required(message="el usuario es requerido")])
 
     edad = TextField('Edad', [validators.length(
         min=2, max=3, message="ingrese un nombre valido"),
-    validators.required(message="la Edad del Estudiante es requerida")])
+        validators.required(message="la Edad del Estudiante es requerida")])
+
+    cedula = TextField('Cedula', [validators.length(
+        min=8, max=8, message="ingrese una cedula valida"),
+        validators.required(message="la cedula del estudiante es requerida")])

@@ -10,13 +10,19 @@ app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
 
 
+
+@app.before_request
+def before_request():
+    if 'username' not in session and request.endpoint in ['perfil', 'preinscripcion', 'reporte']:
+        return redirect(url_for('login'))
+    if 'username' in session and request.endpoint in ['registro', 'login']:
+        return redirect(url_for("perfil"))
+
+
 @app.route('/')
 def inicio():
 
-    if 'username' in session:
-        print(session)
-        return "estas logeado"
-    return "inicio"
+    return render_template("index.html")
 
 
 @app.route('/index')
@@ -62,11 +68,87 @@ def reporte():
     return render_template("reporte.html", tabla=tabla)
 
 
-@app.route('/preinscripcion/<string:usuario>')
-def preinscripcion(usuario="cesar"):
-    hola = usuario
-    print(hola)
+@app.route('/loggin', methods=['GET', 'POST'])
+def login():
+    hola = forms.loggin(request.form)
+    if request.method == 'POST'and hola.validate():
+        username = hola.username.data
+        password = hola.password.data
+        user = User.query.filter_by(username=username).first()
+        if user is not None and user.comparar(password):
+            susseces_message = "bienbenido{}".format(username)
+            flash(susseces_message)
+            session['username'] = username
+            session['user_id'] = user.id
+            return redirect(url_for("Representantes"))
+        else:
+            error_message = "usuario o contraseña invalida"
+            flash(error_message)
+
+    return render_template("loggin.html", forms=hola)
+
+
+@app.route('/preinscripcion')
+def preinscripcion():
+    registro = forms.RegistroAlumno(request.form)
+    id_representante = Representante.query.get(session['user_id'])
+    if request.method == 'POST' and registro.validate():
+        preInscrito = Preinscripcion(nombre=registro.nombre.data,
+                                     apellido=registro.apellido.data,
+                                     escuela=registro.escuela.data,
+                                     edad=registro.edad.data,
+                                     Representantes=id_representante,
+                                     cedula=registro.cedula.data)
+        db.session.add(preInscrito)
+        db.session.commit()
+    return render_template("preinscripcion.html", forms=registro)
+
+
+@app.route('/perfil')
+def perfil():
+
     return render_template("perfil.html")
+
+
+@app.route("/Representantes")
+def Representantes():
+    """
+    esta ruta es para guardar los datos la repesentantes de manera automatica
+    si todo esta bien no tienen que percatarse de lo que esta pasando :V
+    """
+    # objeto consulta que filtra si el usuario esta en la tabla Representantes
+    representante = Representante.query.filter_by(
+        id_usuario=session['user_id']).first()
+
+    # objeto consulta que obtiene el id del usuario segun el id que tiene
+    # en la session
+    user = User.query.get(session['user_id'])
+
+    if representante is None:
+        print(representante)
+        print(user)
+        r = Representante(Users=user)
+        db.session.add(r)
+        db.session.commit()
+        return redirect(url_for('perfil'))
+
+    elif representante.id_usuario == user.id:
+        return redirect(url_for('perfil'))
+
+    print(representante)
+    print(user)
+    return redirect(url_for('perfil'))
+
+
+@app.route('/salir')
+def salir():
+    """
+    esta ruta es para eliminar la cookie session
+
+    """
+    if 'username' in session:
+        session.pop('username')
+    return redirect(url_for("login"))
 
 
 if __name__ == '__main__':

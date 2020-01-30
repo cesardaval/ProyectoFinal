@@ -1,3 +1,4 @@
+{% from "_macros.html" import imprime_formulario %}
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -9,6 +10,18 @@
 		<title>Registro - E.T.C.R. Hermágoras Chavéz</title>
 	</head>
 	<body>
+		{% with mensajes = get_flashed_messages()%}
+    	{% if mensajes %}
+    		{%for mensaje in mensajes%}	
+    			<div class="">
+    				{{mensaje}}
+    			</div>			
+    		{%endfor%}
+    	{%endif%}
+    {%endwith%}
+    {% block content %}
+    {% endblock %}
+
 		<header class="header">
 			<div class="elogo">
 				<img src="{{url_for('static', filename='images/escudoh.png')}}" class="logo">
@@ -19,12 +32,15 @@
 		</header>
 		<div class="loginBox">
 			<h2>Login</h2>
-			<form>
-				<p>Usuario</p>
+			<form method="POST">
+				{{imprime_formulario(forms.username, placeholder=' ejemplo petronilo11')}}
+				{{imprime_formulario(forms.password, placeholder='*********')}}
+				<input type="submit" name="" value="Ingresar">
+				<!--p>Usuario</p>
 				<input Type="text" name="" placeholder="usuario / correo electrónico">
 				<p>Contraseña</p>
 				<input type="password" name ="" placeholder="••••••••">
-				<input type="submit" name="" value="Hecho">
+				<input type="submit" name="" value="Hecho"-->
 				<!--a href="#">Forget Password</a-->
 			</form>
 		</div>
