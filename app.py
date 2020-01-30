@@ -112,8 +112,8 @@ def preinscripcion():
 
 @app.route('/perfil')
 def perfil():
-
-    return render_template("perfil.html")
+    perfil = User.query.filter_by(id=session['user_id']).first()
+    return render_template("perfil.html", perfil=perfil)
 
 
 @app.route("/Representantes")

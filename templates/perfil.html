@@ -29,7 +29,7 @@
 				<ul>
 					<li><a href="perfil">Perfil</a></li>
 					<li><a href="preinscripcion">Preinscripción</a></li>
-					<li><a href="reporte">Reporte</a></li>
+					<li><a href="reporte" target="_blank">Reporte</a></li>
 					<li><a href="Salir">Salir</a></li>
 				</ul>
 			</nav>
@@ -39,7 +39,13 @@
 		.-->
 		<div class="dcontenedor">
 			<div class="eseccion">
-				Aqui debe ir el perfil del representante
+				<label>Nombre: {{perfil.nombre}}</label>
+				<br>
+				<label>Cedula: {{perfil.cedula}}</label>
+				<br>
+				<label>Usuario: {{perfil.username}}</label>
+				<br>
+				<label>Correo: {{perfil.email}}</label>
 			</div>
 			<div class="fseccion">
 				<img src="{{url_for('static', filename='images/wallpappers/person.png')}}" width="100%" class="center">
