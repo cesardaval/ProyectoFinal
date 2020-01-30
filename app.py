@@ -62,6 +62,7 @@ def registro():
 @app.route('/reporte')
 def reporte():
 
+    repre = User.query.filter_by(id = session['user_id']).first()
     alunmos = db.session.query(Representante,
                                Preinscripcion
                                ).join(Preinscripcion).filter_by(id_Representante=session['user_id']).add_columns(
@@ -69,7 +70,8 @@ def reporte():
                                Preinscripcion.cedula,Preinscripcion.escuela,
                                Preinscripcion.edad)
     tabla = Alumnos(alunmos)
-    return render_template("reporte.html", tabla=tabla)
+    print(repre,type(repre))
+    return render_template("reporte.html", tabla=tabla, repre = repre)
 
 
 @app.route('/loggin', methods=['GET', 'POST'])
