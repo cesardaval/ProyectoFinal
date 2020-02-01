@@ -47,7 +47,7 @@ background-size: cover;*/
 
 }
 
-.loginBoxa
+.registrobox
 {
 position:absolute;
 /*top:50%;
@@ -115,14 +115,18 @@ padding:0;
 font-weight:bold;
 color:#fff;
 }*/
-.loginBox input
+.loginBox input,
+.registrobox input
 {
 width:100%;
 margin-bottom:20px;
 }
 .loginBox input[type="text"],
 .loginBox input[type="password"],
-.loginBox input[type="email"]
+.loginBox input[type="email"],
+.registrobox input[type="text"],
+.registrobox input[type="password"],
+.registrobox input[type="email"]
 {
 	border:none;
 	border-bottom:1px solid #fff;
@@ -136,7 +140,8 @@ margin-bottom:20px;
 {
 	color:rgba(255,255,255,.5);
 }
-.loginBox input[type="submit"]{
+.loginBox input[type="submit"],
+.registrobox input[type="submit"]{
 	border:none;
 	outline:none;
 	height:40px;
@@ -146,7 +151,8 @@ margin-bottom:20px;
 	cursor:pointer;
 	border-radius:20px;
 }
-.loginBox input[type="submit"]:hover{
+.loginBox input[type="submit"]:hover,
+.registrobox input[type="submit"]:hover{
 	background:#C1C1C1;
 	color:#262626;
 }
@@ -162,7 +168,7 @@ min 8.03*/
 
 @media screen and (max-width: 768px){
 	.loginBox,
-	.loginBoxa{
+	.registrobox{
 		margin-top:50%;
 	}
 }
