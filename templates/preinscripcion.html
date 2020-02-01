@@ -8,7 +8,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/maqueta2.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/menu.css')}}">
-		<link rel="stylesheet" href="{{url_for('static', filename='css/registro.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/preinscrpcion.css')}}">
 		<title>Inicio - E.T.C.R. Hermágoras Chavéz</title>
 	</head>
 	<body>
@@ -41,15 +41,15 @@
 		<div class="dcontenedor">
 			<div class="eseccion">
 				<div class="loginBox">
-				<form method="POST">
-				{{imprime_formulario(forms.nombre, placeholder='Nombre')}}
-				{{imprime_formulario(forms.apellido, placeholder=' ejemplo 24370551')}}
-				{{imprime_formulario(forms.cedula, placeholder=' ejemplo petronilo11')}}
-				{{imprime_formulario(forms.escuela, placeholder=' ejemplo 24370551')}}
-				{{imprime_formulario(forms.edad, placeholder=' ejemplo 24370551')}}
-				<input type="submit" name="" value="Hecho">
-				</div>
-			</form>
+					<form method="POST">
+						{{imprime_formulario(forms.nombre, placeholder='Nombre')}}
+						{{imprime_formulario(forms.apellido, placeholder=' ejemplo 24370551')}}
+						{{imprime_formulario(forms.cedula, placeholder=' ejemplo petronilo11')}}
+						{{imprime_formulario(forms.escuela, placeholder=' ejemplo 24370551')}}
+						{{imprime_formulario(forms.edad, placeholder=' ejemplo 24370551')}}
+						<input type="submit" name="" value="Hecho">
+					</div>
+				</form>
 			</div>
 			<div class="fseccion">
 				<img src="{{url_for('static', filename='images/wallpappers/people.png')}}" width="100%" class="center">
