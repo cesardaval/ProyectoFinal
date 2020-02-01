@@ -47,10 +47,35 @@ background-size: cover;*/
 
 }
 
+.loginBoxa
+{
+position:absolute;
+/*top:50%;
+*/
+margin-top:22%;
+margin-bottom:5%;
+left:50%;
+transform:translate(-50%,-50%);
+width:350px;
+/*height:420px;*/
+height:550px;
+padding:40px 40px;
+box-sizing:border-box;
+background:rgb(0,0,0,.5);
+border-radius:20px;
+/***/
+box-shadow: 1px 1px 10px black;
+color:#fff;
+}
+
+/***********/
 .loginBox
 {
 position:absolute;
-top:50%;
+/*top:50%;
+*/
+margin-top:18%;
+margin-bottom:5%;
 left:50%;
 transform:translate(-50%,-50%);
 width:350px;
@@ -64,6 +89,7 @@ border-radius:20px;
 box-shadow: 1px 1px 10px black;
 color:#fff;
 }
+
 .user
 {
 width:100px;
@@ -95,7 +121,8 @@ width:100%;
 margin-bottom:20px;
 }
 .loginBox input[type="text"],
-.loginBox input[type="password"]
+.loginBox input[type="password"],
+.loginBox input[type="email"]
 {
 	border:none;
 	border-bottom:1px solid #fff;
@@ -134,7 +161,8 @@ min 8.03*/
 
 
 @media screen and (max-width: 768px){
-	.loginBox{
-		margin-top:10%;
+	.loginBox,
+	.loginBoxa{
+		margin-top:50%;
 	}
 }

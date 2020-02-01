@@ -1,0 +1,47 @@
+.eseccion{
+	
+padding:80px 40px;
+
+}
+
+.eseccion input
+{
+width:100%;
+margin-bottom:20px;
+}
+.eseccion input[type="text"],
+.eseccion input[type="password"],
+.eseccion input[type="email"]
+{
+	border:none;
+	border-bottom:1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	font-size:16px;
+	color:#222;
+}
+::placeholder
+{
+	/*color:rgba(255,255,255,.5);*/
+	color:#545454FF;
+}
+.eseccion input[type="submit"]{
+	border:none;
+	outline:none;
+	height:40px;
+	color:#000;
+	font-size:16px;
+	background:#fff;
+	cursor:pointer;
+	border-radius:20px;
+}
+.eseccion input[type="submit"]:hover{
+	background:#C1C1C1;
+	color:#262626;
+}
+
+
+.pseccion{
+	padding:20px;
+}
