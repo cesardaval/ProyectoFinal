@@ -99,6 +99,7 @@ def login():
 def preinscripcion():
     registro = forms.RegistroAlumno(request.form)
     id_representante = Representante.query.get(session['user_id'])
+
     if request.method == 'POST' and registro.validate():
         preInscrito = Preinscripcion(nombre=registro.nombre.data,
                                      apellido=registro.apellido.data,
