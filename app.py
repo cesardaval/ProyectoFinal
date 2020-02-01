@@ -9,7 +9,7 @@ from tables import Alumnos
 import forms
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
-
+db.init_app(app)
 
 @app.before_request
 def before_request():
@@ -124,8 +124,8 @@ def Representantes():
     si todo esta bien no tienen que percatarse de lo que esta pasando :V
 
     nota para mi yo del futuro, te acabas de encontrar de casualidad una situacion
-    no esperada, programamos la tabla de representantes para que sea igual 
-    id tabla y el id_relacion y sin querer hice un registro que rompiera con esta 
+    no esperada, programamos la tabla de representantes para que sea igual
+    id tabla y el id_relacion y sin querer hice un registro que rompiera con esta
     logica y a la hora de lanzar el reporte da como resultado un intercambio de datos
     porfavor recuerda sulucionarlo en el futuro gracias <3 recuerda que fue 1 2
     y 2 1
@@ -166,7 +166,8 @@ def salir():
 
 
 if __name__ == '__main__':
-    db.init_app(app)
+
     with app.app_context():
         db.create_all()
     app.run()
+
