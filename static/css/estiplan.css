@@ -24,7 +24,8 @@ body {
 
 	/*CAMBIOS*/
 	/*especificar cuantas filas y columnas*/
-	grid-template-areas: "alogo header blogo"
+	grid-template-areas: /*"alogo header blogo"*/
+						"barra barra barra"
 						"contenido contenido contenido"
 						"contenido contenido contenido"
 }
@@ -62,17 +63,17 @@ h1{
 	/*margin top-bot 20 px, lados=auto*/
 	
 
-.contenedor .header,
+/*.contenedor .header,
 .contenedor .contenido,
 .contenedor .footer{
 	/*background: #fff;*/
-	background:#fff;
+/*	background:#fff;
 	padding:20px;
 	border-radius: 4px;
 }
 /*************************/
-header{
-	grid-area:header;
+.header{
+	/*grid-area:header;*/
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -84,12 +85,16 @@ header{
 	grid-area:contenido;
 	padding:50px;
 }
+
+.barra{
+	grid-area:barra;
+}
 /*************************/
 
 /******************/
 .alogo{
-	grid-area:alogo;
-	/*float:left;*/
+	/*grid-area:alogo;*/
+	float:left;
 	margin-left: 0;
     margin-right: auto;
     display: block;
@@ -99,8 +104,8 @@ header{
 }
 /*********************/
 .blogo{
-	grid-area:blogo;
-	/*float:right;*/
+	/*grid-area:blogo;*/
+	float:right;
 
 	margin-left: auto;
     margin-right: 0;
