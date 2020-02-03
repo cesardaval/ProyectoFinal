@@ -9,49 +9,44 @@
 		<title>Page Title</title>
 	</head>
 	<body>
-		<div class="contenedor">
-			<div class="alogo">
-				<img src="{{url_for('static', filename='images/escudoh.svg')}}" class="center">
-			</div>
-			<!------------
-				.
-				.
-			.----------->
-			<header class="header">
-				<strong><p class="p2">República Bolivariana de Venezuela<br>Ministerio del Poder Popular para la Educación<br>Escuela Técnica Comercial Robinsoniana<br>"Hermágoras Chavéz"<br>Cabimas, Estado-Zulia</p></strong>
-			</header>
-			<!------------
+		<div class="alogo">
+			<img src="{{url_for('static', filename='images/escudoh.svg')}}" height="80px">
+		</div>
+		<!------------
 			.
 			.
-			.----------->
-			<div class="blogo">
-				<img src="{{url_for('static', filename='images/mineduc.png')}}" class="center">
-			</div>
-			<!------------
-			.
-			.
-			.----------->
-			<main class="contenido">
-				<h1>Comprobante de Preinscripción</h1>
-				<br>
-				<p class="p1">La E.T.C.R. Hermágoras Chavéz hace constar que el(la) ciudadano(a) {{repre.apellido}}, {{repre.nombre}} con cédula de identidad: {{repre.cedula}}, realizó la(s) siguiente(s) preinscripción(es):</p>
-				<br>
-				<!--table>
-					<tr>
-							<th>Nombre</th><th>Apellido</th><th>Edad</th><th>Cédula</th><th>Escuela</th>
-					</tr>
-					<tr>
-							<td>[Valor1]</td><td>[Valor2]</td><td>[Valor3]</td><td>[Valor4]</td><td>[Valor5]</td>
-					</tr>
-					<tr>
-							<td>[Valor1]</td><td>[Valor2]</td><td>[Valor3]</td><td>[Valor4]</td><td>[Valor5]</td>
-					</tr>
-			</table-->
-			{{tabla}}
-		</main>
-		<footer class="footer">
-			<h1>bla bla bla!</h1>
-		</footer>
+		.----------->
+		<header>
+			<strong><p class="p2">República Bolivariana de Venezuela<br>Ministerio del Poder Popular para la Educación<br>Escuela Técnica Comercial Robinsoniana<br>"Hermágoras Chavéz"<br>Cabimas, Estado-Zulia</p></strong>
+		</header>
+		<!------------
+		.
+		.
+		.----------->
+		<div class="blogo">
+			<img src="{{url_for('static', filename='images/mineduc.png')}}" height="80px">
+		</div>
+		<!------------
+		.
+		.
+		.----------->
+		<div class="contenido">
+			<h1>Comprobante de Preinscripción</h1>
+			<br>
+			<p class="p1">La E.T.C.R. Hermágoras Chavéz hace constar que el(la) ciudadano(a) {{repre.apellido}}, {{repre.nombre}} con cédula de identidad: {{repre.cedula}}, realizó la(s) siguiente(s) preinscripción(es):</p>
+			<br>
+			<!--table>
+				<tr>
+																				<th>Nombre</th><th>Apellido</th><th>Edad</th><th>Cédula</th><th>Escuela</th>
+				</tr>
+				<tr>
+																				<td>[Valor1]</td><td>[Valor2]</td><td>[Valor3]</td><td>[Valor4]</td><td>[Valor5]</td>
+				</tr>
+				<tr>
+																				<td>[Valor1]</td><td>[Valor2]</td><td>[Valor3]</td><td>[Valor4]</td><td>[Valor5]</td>
+				</tr>
+		</table-->
+		{{tabla}}
 	</div>
 </body>
 </html>
