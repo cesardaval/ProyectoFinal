@@ -11,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String(40))
     password = db.Column(db.String(95))
     nombre = db.Column(db.String(40))
-    cedula = db.Column(db.String(10))
+    cedula = db.Column(db.String(10), unique=True)
     create_date = db.Column(db.DateTime, default=datetime.datetime.now)
 
     representante = db.relationship('Representante', backref="Users",
@@ -46,7 +46,7 @@ class Preinscripcion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(10))
     apellido = db.Column(db.String(15))
-    cedula = db.Column(db.String(15))
+    cedula = db.Column(db.String(15), unique=True)
     edad = db.Column(db.Integer)
     escuela = db.Column(db.String(50))
     create_date = db.Column(db.DateTime, default=datetime.datetime.now)

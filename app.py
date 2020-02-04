@@ -2,13 +2,16 @@ from flask import Flask
 from flask import render_template, request, session
 from flask import redirect, url_for
 from flask import flash
-#from flask_weasyprint import HTML, render_pdf
+from flask_weasyprint import HTML, render_pdf
 from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
 from tables import Alumnos
 import forms
+from flask_wtf import CSRFProtect
+
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
+csrf = CSRFProtect(app)
 db.init_app(app)
 
 @app.before_request
@@ -57,6 +60,7 @@ def registro():
                     form.password.data)
         db.session.add(user)
         db.session.commit()
+        return redirect(url_for('login'))
     return render_template("registro.html", forms=form)
 
 
@@ -72,7 +76,7 @@ def reporte():
         Preinscripcion.edad)
     tabla = Alumnos(alunmos)
     chtml = render_template("reporte.html", tabla=tabla, repre=repre)
-    return chtml #render_pdf(HTML(string=chtml))
+    return render_pdf(HTML(string=chtml))
 
 
 @app.route('/loggin', methods=['GET', 'POST'])
@@ -109,6 +113,7 @@ def preinscripcion():
                                      cedula=registro.cedula.data)
         db.session.add(preInscrito)
         db.session.commit()
+        return redirect(url_for('preinscripcion'))
     return render_template("preinscripcion.html", forms=registro)
 
 
