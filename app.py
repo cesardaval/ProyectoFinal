@@ -18,7 +18,7 @@ db.init_app(app)
 parametro del decorador es igual al error, se ejecuta
 la llamada a la funcion y renderiza el template y
 adicional a eso manda se tiene que pasar como segundo
-parametro el codigo del error 
+parametro el codigo del error
 """
 @app.errorhandler(404)
 def la_pagina_no_funciona(error):

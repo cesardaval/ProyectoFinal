@@ -27,15 +27,7 @@
 				{{imprime_formulario(forms.email, placeholder=' ejemplo 24370551')}}
 				{{imprime_formulario(forms.password, placeholder=' ejemplo 24370551')}}
 				<input type="submit" name="" value="Hecho">
-				<!--input Type="text" name="" placeholder="usuario / correo electrónico">
-				<input Type="text" name="" placeholder="usuario / correo electrónico">
-				<input Type="text" name="" placeholder="usuario / correo electrónico">
-				<input Type="text" name="" placeholder="usuario / correo electrónico">
-				<input Type="text" name="" placeholder="usuario / correo electrónico">
-				<p>Contraseña</p>
-				<input type="password" name ="" placeholder="••••••••">
-				<input type="submit" name="" value="Hecho"-->
-				<!--a href="#">Forget Password</a-->
+				<input type="hidden" name="csrf_token" value="{{csrf_token()}}">
 			</form>
 		</div>
 	</body>
