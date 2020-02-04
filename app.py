@@ -14,6 +14,17 @@ app.config.from_object("config.Configuracion_desarrollo")
 csrf = CSRFProtect(app)
 db.init_app(app)
 
+"""
+parametro del decorador es igual al error, se ejecuta
+la llamada a la funcion y renderiza el template y
+adicional a eso manda se tiene que pasar como segundo
+parametro el codigo del error 
+"""
+@app.errorhandler(404)
+def la_pagina_no_funciona(error):
+    return "aqui va el template", 404
+
+
 @app.before_request
 def before_request():
     if 'username' not in session and request.endpoint in ['perfil', 'preinscripcion', 'reporte']:
