@@ -7,11 +7,11 @@ from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
 from tables import Alumnos
 import forms
-from flask_wtf import CSRFProtect
+#from flask_wtf import CSRFProtect
 
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
-csrf = CSRFProtect(app)
+#csrf = CSRFProtect(app)
 db.init_app(app)
 
 """
