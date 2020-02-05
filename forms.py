@@ -80,6 +80,13 @@ class RegistroAlumno(Form):
             raise validators.ValidationError(
                 "La cedula ya se encuentra registrada.")
 
+    def validate_nombre(form, field):
+        nombre = int(len(field.data))
+        
+        if nombre < 3 or nombre > 10:
+            raise validators.ValidationError(
+                "El nombre es muy largo o corto.")
+
     def validate_edad(form, field):
         edad = int(field.data)
         if edad < 9 or edad > 20:

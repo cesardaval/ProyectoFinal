@@ -9,9 +9,29 @@
 		<link rel="stylesheet" href="{{url_for('static', filename='css/maqueta2.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/menu.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/preinscrpcion.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/toastr.min.css')}}">
+		<script src="{{url_for('static',filename='js/jquery-3.4.1.min.js')}}"></script>
+		<script src="{{url_for('static',filename='js/toastr.min.js')}}"></script>
 		<title>Inicio - E.T.C.R. Hermágoras Chavéz</title>
 	</head>
 	<body>
+
+		{% with mensajes = get_flashed_messages()%}
+		{% if mensajes %}
+			{%for mensaje in mensajes%}
+			<script type="text/javascript">
+			toastr.options.closeButton = true;
+			toastr.options.timeOut = 6000;
+        toastr.options.closeMethod = 'fadeOut';
+		toastr.options.closeDuration = 1900;
+		toastr.options.closeEasing = 'swing';
+
+
+        toastr.success('{{mensaje}}', 'Inicio')
+		</script>
+			{%endfor%}
+			{%endif%}
+			{%endwith%}
 		<header class="header">
 			<div class="elogo">
 				<img src="{{url_for('static', filename='images/escudoh.png')}}" class="logo">
@@ -43,12 +63,12 @@
 				<div class="loginBox">
 					<form method="POST">
 						{{imprime_formulario(forms.nombre, placeholder='Nombre')}}
-						{{imprime_formulario(forms.apellido, placeholder=' ejemplo 24370551')}}
-						{{imprime_formulario(forms.cedula, placeholder=' ejemplo petronilo11')}}
-						{{imprime_formulario(forms.escuela, placeholder=' ejemplo 24370551')}}
-						{{imprime_formulario(forms.edad, placeholder=' ejemplo 24370551')}}
+						{{imprime_formulario(forms.apellido, placeholder=' ejemplo Perez')}}
+						{{imprime_formulario(forms.cedula, placeholder=' ejemplo 24370551')}}
+						{{imprime_formulario(forms.escuela, placeholder=' ejemplo General Rafael Urdaneta')}}
+						{{imprime_formulario(forms.edad, placeholder=' ejemplo 12')}}
 						<input type="submit" name="" value="Hecho">
-
+						<input type="hidden" name="csrf_token" value="{{csrf_token()}}">
 					</div>
 				</form>
 			</div>
@@ -59,7 +79,6 @@
 				<p>Copyright &copy; E.T.C.R. HERMÁGORAS CHAVÉZ - 2020 <br></p>
 			</footer>
 		</div>
-		<script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
-		<script src="{{url_for('static', filename='js/funcion.js')}}"></script>
+		
 	</body>
 </html>

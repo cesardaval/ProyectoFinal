@@ -7,11 +7,11 @@ from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
 from tables import Alumnos
 import forms
-#from flask_wtf import CSRFProtect
+from flask_wtf import CSRFProtect
 
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
-#csrf = CSRFProtect(app)
+csrf = CSRFProtect(app)
 db.init_app(app)
 
 """
@@ -71,6 +71,8 @@ def registro():
                     form.password.data)
         db.session.add(user)
         db.session.commit()
+        susseces_message = "Se registro exitosamente"
+        flash(susseces_message)
         return redirect(url_for('login'))
     return render_template("registro.html", forms=form)
 
@@ -98,7 +100,7 @@ def login():
         password = hola.password.data
         user = User.query.filter_by(username=username).first()
         if user is not None and user.comparar(password):
-            susseces_message = "bienbenido{}".format(username)
+            susseces_message = "bienbenido(a) {}".format(username)
             flash(susseces_message)
             session['username'] = username
             session['user_id'] = user.id
@@ -124,6 +126,8 @@ def preinscripcion():
                                      cedula=registro.cedula.data)
         db.session.add(preInscrito)
         db.session.commit()
+        mensaje = "se Preinscribio exitosamente"
+        flash(mensaje)
         return redirect(url_for('preinscripcion'))
     return render_template("preinscripcion.html", forms=registro)
 
@@ -179,7 +183,7 @@ def salir():
     """
     if 'username' in session:
         session.pop('username')
-    return redirect(url_for("login"))
+    return redirect(url_for("inicio"))
 
 
 if __name__ == '__main__':

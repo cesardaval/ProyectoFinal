@@ -8,49 +8,16 @@
 	{%if campo.errors%}
 		{%for error in campo.errors%}
 			
-			<script type="text/javascript">
-				
-				$(document).ready(function(){ 
-    $("#hecho").click(function(){
-        //tipos de mensajes succes, info, warning, error
-        //titulo y mensaje de texto
-        toastr["warning"]("{{error}}", "Cuidado");   
-        
-    
-    });
-    
-    toastr.options = { 
-        //primeras opciones
-        "closeButton": false, //boton cerrar
-        "debug": false,
-        "newestOnTop": false, //notificaciones mas nuevas van en la parte superior
-        "progressBar": true, //barra de progreso hasta que se oculta la notificacion
-        "preventDuplicates": false, //para prevenir mensajes duplicados
-        
-        "onclick": null,
-        
-        //Posición de la notificación
-        //toast-bottom-left, toast-bottom-right, toast-bottom-left, toast-top-full-width, toast-top-center
-        "positionClass": "toast-top-right",
-                
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut",
-        "tapToDismiss": false
-    };
-    
-    
-    
-    
-    
-});	    
+		<script >
+		toastr.options.closeButton = true;
+		toastr.options.timeOut = 20000;
+        toastr.options.closeMethod = 'fadeOut';
+		toastr.options.closeDuration = 1900;
+		toastr.options.closeEasing = 'swing';
 
-			</script>
+        toastr.warning('Disculpe, {{error}}')
+
+    	</script> 
 
 		{%endfor%}
 	{%endif%}

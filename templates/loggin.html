@@ -7,6 +7,9 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/registro.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/toastr.min.css')}}">
+		<script src="{{url_for('static',filename='js/jquery-3.4.1.min.js')}}"></script>
+		<script src="{{url_for('static',filename='js/toastr.min.js')}}"></script>
 		<title>Registro - E.T.C.R. Hermágoras Chavéz</title>
 	</head>
 	<body>
@@ -15,8 +18,13 @@
 		{% if mensajes %}
 			{%for mensaje in mensajes%}
 			<script type="text/javascript">
-			var mensaje = "{{mensaje}}"
-			alert(mensaje)
+			toastr.options.closeButton = true;
+			toastr.options.timeOut = 20000;
+        toastr.options.closeMethod = 'fadeOut';
+		toastr.options.closeDuration = 1900;
+		toastr.options.closeEasing = 'swing';
+
+        toastr.warning('Disculpe, {{mensaje}}')
 		</script>
 			{%endfor%}
 			{%endif%}
