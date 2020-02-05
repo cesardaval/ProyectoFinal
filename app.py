@@ -7,9 +7,23 @@ from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
 from tables import Alumnos
 import forms
+from flask_wtf import CSRFProtect
+
 app = Flask(__name__)
 app.config.from_object("config.Configuracion_desarrollo")
+csrf = CSRFProtect(app)
 db.init_app(app)
+
+"""
+parametro del decorador es igual al error, se ejecuta
+la llamada a la funcion y renderiza el template y
+adicional a eso manda se tiene que pasar como segundo
+parametro el codigo del error
+"""
+@app.errorhandler(404)
+def la_pagina_no_funciona(error):
+    return "aqui va el template", 404
+
 
 @app.before_request
 def before_request():
@@ -57,6 +71,7 @@ def registro():
                     form.password.data)
         db.session.add(user)
         db.session.commit()
+        return redirect(url_for('login'))
     return render_template("registro.html", forms=form)
 
 
@@ -109,6 +124,7 @@ def preinscripcion():
                                      cedula=registro.cedula.data)
         db.session.add(preInscrito)
         db.session.commit()
+        return redirect(url_for('preinscripcion'))
     return render_template("preinscripcion.html", forms=registro)
 
 

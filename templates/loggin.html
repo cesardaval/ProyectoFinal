@@ -10,12 +10,14 @@
 		<title>Registro - E.T.C.R. Hermágoras Chavéz</title>
 	</head>
 	<body>
+		
 		{% with mensajes = get_flashed_messages()%}
 		{% if mensajes %}
 			{%for mensaje in mensajes%}
-			<div class="">
-				{{mensaje}}
-			</div>
+			<script type="text/javascript">
+			var mensaje = "{{mensaje}}"
+			alert(mensaje)
+		</script>
 			{%endfor%}
 			{%endif%}
 			{%endwith%}
@@ -35,6 +37,7 @@
 					{{imprime_formulario(forms.username, placeholder=' ejemplo petronilo11')}}
 					{{imprime_formulario(forms.password, placeholder='*********')}}
 					<input type="submit" name="" value="Ingresar">
+					<input type="hidden" name="csrf_token" value="{{csrf_token()}}">
 				<!--p>Usuario</p>
 				<input Type="text" name="" placeholder="usuario / correo electrónico">
 				<p>Contraseña</p>
