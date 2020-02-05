@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template, request, session
 from flask import redirect, url_for
 from flask import flash
-#from flask_weasyprint import HTML, render_pdf
+from flask_weasyprint import HTML, render_pdf
 from config import Configuracion_desarrollo
 from models import User, db, Representante, Preinscripcion
 from tables import Alumnos
@@ -87,7 +87,7 @@ def reporte():
         Preinscripcion.edad)
     tabla = Alumnos(alunmos)
     chtml = render_template("reporte.html", tabla=tabla, repre=repre)
-    return chtml #render_pdf(HTML(string=chtml))
+    return render_pdf(HTML(string=chtml))
 
 
 @app.route('/loggin', methods=['GET', 'POST'])
