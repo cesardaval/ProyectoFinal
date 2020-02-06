@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/error404.css')}}">
+		<title>Ups! Página no encontrada</title>
+	</head>
+	<body>
+		<div class="cuerpoerror">
+			<div class="imagn">
+				<img src="{{url_for('static', filename='images/vectorerror-01.svg')}}" class="center">
+			</div>
+			<div class="mnsj">
+				<div class="p1">La página que intentas solicitar no está en el servidor (Error 404):</div>
+				<br><br>
+				<div class="p2">Prueba nuevamente en nuestro sitio web desde el siguiente botón</div>
+			</div>
+			<div class="btnback">
+				<input type="submit" name="" value="Volver al Sitio Web" class="center" >
+			</div>
+		</div>
+	</body>
+</html>

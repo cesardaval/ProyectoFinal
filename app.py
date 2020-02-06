@@ -22,7 +22,7 @@ parametro el codigo del error
 """
 @app.errorhandler(404)
 def la_pagina_no_funciona(error):
-    return "aqui va el template", 404
+    return render_template('plantilla404.html'), 404
 
 
 @app.before_request

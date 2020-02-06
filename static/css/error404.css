@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color:rgb(23,35,86);
+	font-family: 'Roboto', sans-serif;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.cuerpoerror{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	padding-top:40px;
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: repeat(2,auto);
+	grid-template-areas: 
+						"imagn mnsj"
+						"imagn btnback"
+}
+.cuerpoerror .imagn{
+	grid-area:imagn;
+}
+.cuerpoerror .mnsj{
+	grid-area:mnsj;
+}
+.cuerpoerror .btnback{
+	grid-area:btnback;
+	margin-top:20px;
+}
+
+.p1{
+	font-size:40px;
+	color: #fff;
+	font-weight:bold;
+}
+
+.p2{
+	font-size:20px;
+	color: #CCC;
+}
+
+.cuerpoerror input
+{
+width:80%;
+margin-bottom:20px;
+}
+.cuerpoerror input[type="submit"]{
+	border:none;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:16px;
+	background:#0FBC15;
+	cursor:pointer;
+	border-radius:20px;
+}
+.cuerpoerror input[type="submit"]:hover{
+	background:#efed40;
+	color:#262626;
+}
+
+@media screen and (max-width: 768px){
+	.cuerpoerror {
+		grid-template-areas:"imagn imagn"
+							"mnsj mnsj"
+							"btnback btnback";
+	}
+
+	img{
+		width:50%;
+	}
